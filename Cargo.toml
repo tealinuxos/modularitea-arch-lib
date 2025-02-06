@@ -1,0 +1,8 @@
+[package]
+name = "modularitea-arch-lib"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+duct = "0.13.7"
+serde = "1.0.217"
