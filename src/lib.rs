@@ -1,3 +1,7 @@
+pub mod design;
+pub mod network;
+pub mod programming;
+
 pub fn add(left: u64, right: u64) -> u64 {
     left + right
 }
