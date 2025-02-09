@@ -1,10 +1,10 @@
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
-#[derive(Serialize)]
+#[derive(Debug, Serialize, Deserialize)]
 pub struct Design {
-    package: String,
-    description: String,
-    command: String,
+    pub package: String,
+    pub description: String,
+    pub command: String,
 }
 
 impl Design {

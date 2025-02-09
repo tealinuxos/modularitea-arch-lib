@@ -6,35 +6,28 @@ pub mod program;
 mod module_design {
 
     use crate::design::Design;
-    use serde_json::Value;
 
     #[test]
     fn blender() {
-        let blender = Design::blender();
-        let json: Value = serde_json::from_str(&blender).unwrap();
-        let blender_json = json["package"].as_str().unwrap();
+        let blender: Design = serde_json::from_str(&Design::blender()).unwrap();
 
-        assert_eq!(String::from("Blender"), blender_json);
+        assert_eq!(String::from("Blender"), blender.package);
     }
 
     #[test]
     fn gimp() {
-        let gimp = Design::gimp();
-        let json: Value = serde_json::from_str(&gimp).unwrap();
-        let gimp_json = json["package"].as_str().unwrap();
+        let gimp: Design = serde_json::from_str(&Design::gimp()).unwrap();
 
         assert_eq!(
             String::from("GIMP (GNU Image Manipulation Program)"),
-            gimp_json
+            gimp.package
         );
     }
 
     #[test]
     fn openshot() {
-        let openshot = Design::openshot();
-        let json: Value = serde_json::from_str(&openshot).unwrap();
-        let openshot_json = json["package"].as_str().unwrap();
+        let openshot: Design = serde_json::from_str(&Design::openshot()).unwrap();
 
-        assert_eq!(String::from("OpenShot"), openshot_json);
+        assert_eq!(String::from("OpenShot"), openshot.package);
     }
 }
