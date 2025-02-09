@@ -28,11 +28,22 @@ impl Design {
         serde_json::to_string_pretty(&gimp).unwrap()
     }
 
+    pub fn openshot() -> String {
+        let openshot = Design {
+            package: "OpenShot".to_string(),
+            description: "An award-wining open source video editor".to_string(),
+            command: "sudo pacman -S openshot".to_string(),
+        };
+
+        serde_json::to_string_pretty(&openshot).unwrap()
+    }
+
     pub fn list() -> Vec<String> {
         let mut lists = Vec::new();
 
         lists.push(Design::blender());
         lists.push(Design::gimp());
+        lists.push(Design::openshot());
 
         lists
     }
