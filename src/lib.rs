@@ -1,18 +1,39 @@
 pub mod design;
 pub mod network;
-pub mod programming;
+pub mod program;
 
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
+#[cfg(test)]
+mod module_design {
+
+    use crate::design::Design;
+    use serde_json::Value;
+
+    #[test]
+    fn blender() {
+        let blender = Design::blender();
+        let json: Value = serde_json::from_str(&blender).unwrap();
+        let blender_json = json["package"].as_str().unwrap();
+
+        assert_eq!(String::from("Blender"), blender_json);
+    }
+
+    #[test]
+    fn gimp() {
+        let gimp = Design::gimp();
+        let json: Value = serde_json::from_str(&gimp).unwrap();
+        let gimp_json = json["package"].as_str().unwrap();
+
+        assert_eq!(
+            String::from("GIMP (GNU Image Manipulation Program)"),
+            gimp_json
+        );
+    }
 }
 
 #[cfg(test)]
-mod tests {
-    use super::*;
-
+mod module_network {
     #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
+    fn docker() {
+        assert_eq!(5, 5);
     }
 }
