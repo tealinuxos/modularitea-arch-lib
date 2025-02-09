@@ -28,12 +28,13 @@ mod module_design {
             gimp_json
         );
     }
-}
 
-#[cfg(test)]
-mod module_network {
     #[test]
-    fn docker() {
-        assert_eq!(5, 5);
+    fn openshot() {
+        let openshot = Design::openshot();
+        let json: Value = serde_json::from_str(&openshot).unwrap();
+        let openshot_json = json["package"].as_str().unwrap();
+
+        assert_eq!(String::from("OpenShot"), openshot_json);
     }
 }
