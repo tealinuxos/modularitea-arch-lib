@@ -58,3 +58,30 @@ mod module_network {
         assert_eq!(String::from("Postman"), postman.package);
     }
 }
+
+#[cfg(test)]
+mod module_program {
+
+    use crate::program::Program;
+
+    #[test]
+    fn visual_studio_code() {
+        let code: Program = serde_json::from_str(&Program::vsc()).unwrap();
+
+        assert_eq!(String::from("Codium IDE"), code.package);
+    }
+
+    #[test]
+    fn laravel() {
+        let laravel: Program = serde_json::from_str(&Program::laravel()).unwrap();
+
+        assert_eq!(String::from("Laravel"), laravel.package);
+    }
+
+    #[test]
+    fn nodejs() {
+        let node: Program = serde_json::from_str(&Program::nodejs()).unwrap();
+
+        assert_eq!(String::from("Node.js"), node.package);
+    }
+}
