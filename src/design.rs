@@ -39,11 +39,7 @@ impl Design {
     }
 
     pub fn list() -> Vec<String> {
-        let mut lists = Vec::new();
-
-        lists.push(Design::blender());
-        lists.push(Design::gimp());
-        lists.push(Design::openshot());
+        let lists: Vec<String> = vec![Design::blender(), Design::gimp(), Design::openshot()];
 
         lists
     }
