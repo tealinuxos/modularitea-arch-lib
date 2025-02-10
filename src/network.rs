@@ -37,4 +37,10 @@ impl Network {
 
         serde_json::to_string_pretty(&post).unwrap()
     }
+
+    pub fn list() -> Vec<String> {
+        let lists: Vec<String> = vec![Network::docker(), Network::burpsuite(), Network::postman()];
+
+        lists
+    }
 }
