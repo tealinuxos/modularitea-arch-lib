@@ -1,10 +1,17 @@
 use serde::{Deserialize, Serialize};
 
+enum Source {
+    AUR,
+    Official,
+    URL,
+}
+
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Design {
     pub package: String,
     pub description: String,
     pub command: String,
+    pub source: Source,
 }
 
 impl Design {
@@ -13,6 +20,7 @@ impl Design {
             package: "Blender".to_string(),
             description: "Make a design with 3D designing".to_string(),
             command: "blender".to_string(),
+            source: Source::Official,
         };
 
         serde_json::to_string_pretty(&blender).unwrap()
@@ -23,6 +31,7 @@ impl Design {
             package: "GIMP (GNU Image Manipulation Program)".to_string(),
             description: "Editing image kinde like Adobe Photosop".to_string(),
             command: "gimp".to_string(),
+            source: Source::Official,
         };
 
         serde_json::to_string_pretty(&gimp).unwrap()
@@ -33,6 +42,7 @@ impl Design {
             package: "OpenShot".to_string(),
             description: "An award-wining open source video editor".to_string(),
             command: "openshot".to_string(),
+            source: Source::Official,
         };
 
         serde_json::to_string_pretty(&openshot).unwrap()

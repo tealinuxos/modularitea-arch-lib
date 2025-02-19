@@ -1,10 +1,17 @@
 use serde::{Deserialize, Serialize};
 
+enum Source {
+    AUR,
+    Official,
+    URL,
+}
+
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Program {
     pub package: String,
     pub description: String,
     pub command: String,
+    pub source: Source,
 }
 
 impl Program {
@@ -14,6 +21,7 @@ impl Program {
             description: "Text Editor / IDE with Open Source License without proprietary tracking"
                 .to_string(),
             command: "code".to_string(),
+            source: Source::Official,
         };
 
         serde_json::to_string_pretty(&vsc).unwrap()
@@ -24,6 +32,7 @@ impl Program {
             package: "Laravel".to_string(),
             description: "Fullstack framework with powered by PHP programming language".to_string(),
             command: "/bin/bash -c '$(curl -fsSL https://php.new/install/linux/8.4)'".to_string(),
+            source: Source::URL,
         };
 
         serde_json::to_string_pretty(&lambo).unwrap()
@@ -34,6 +43,7 @@ impl Program {
             package: "Node.js".to_string(),
             description: "JavaScript runtime built on Chrome's V8 engine".to_string(),
             command: "nodejs npm".to_string(),
+            source: Source::Official,
         };
 
         serde_json::to_string_pretty(&node).unwrap()
