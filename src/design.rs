@@ -12,7 +12,7 @@ impl Design {
         let blender = Design {
             package: "Blender".to_string(),
             description: "Make a design with 3D designing".to_string(),
-            command: "sudo pacman -S blender".to_string(),
+            command: "blender".to_string(),
         };
 
         serde_json::to_string_pretty(&blender).unwrap()

@@ -13,7 +13,7 @@ impl Program {
             package: "Codium IDE".to_string(),
             description: "Text Editor / IDE with Open Source License without proprietary tracking"
                 .to_string(),
-            command: "sudo pacman -S code".to_string(),
+            command: "code".to_string(),
         };
 
         serde_json::to_string_pretty(&vsc).unwrap()
@@ -33,7 +33,7 @@ impl Program {
         let node = Program {
             package: "Node.js".to_string(),
             description: "JavaScript runtime built on Chrome's V8 engine".to_string(),
-            command: "sudo pacman -S node npm".to_string(),
+            command: "nodejs npm".to_string(),
         };
 
         serde_json::to_string_pretty(&node).unwrap()
