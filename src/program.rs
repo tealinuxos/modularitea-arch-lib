@@ -1,6 +1,7 @@
 use serde::{Deserialize, Serialize};
 
-enum Source {
+#[derive(Debug, Serialize, Deserialize)]
+pub enum Source {
     AUR,
     Official,
     URL,
