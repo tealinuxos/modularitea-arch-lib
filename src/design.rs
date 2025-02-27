@@ -1,7 +1,7 @@
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Serialize, Deserialize)]
-pub enum Source {
+enum Source {
     AUR,
     Official,
     URL,
@@ -12,7 +12,7 @@ pub struct Design {
     pub package: String,
     pub description: String,
     pub command: String,
-    pub source: Source,
+    source: Source,
 }
 
 impl Design {
