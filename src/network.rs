@@ -1,11 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Serialize, Deserialize)]
-enum Source {
-    AUR,
-    Official,
-    URL,
-}
+use crate::skeleton::Source;
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Network {
