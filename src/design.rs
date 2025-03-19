@@ -44,6 +44,72 @@ impl Design {
         serde_json::to_string_pretty(&openshot).unwrap()
     }
 
+    pub fn krita() -> String {
+        let value = Design {
+            package: "Krita".to_string(),
+            description: "Professional free and open source painting program".to_string(),
+            command: "krita".to_string(),
+            source: Source::Official,
+        };
+
+        serde_json::to_string_pretty(&value).unwrap()
+    }
+
+    pub fn figma() -> String {
+        let value = Design {
+            package: "Figma".to_string(),
+            description: "The collaborative interface design tool".to_string(),
+            command: "figma-linux-bin".to_string(),
+            source: Source::AUR,
+        };
+
+        serde_json::to_string_pretty(&value).unwrap()
+    }
+
+    pub fn freecad() -> String {
+        let value = Design {
+            package: "FreeCAD".to_string(),
+            description: "Feature based parametric 3D CAD modeler".to_string(),
+            command: "freecad".to_string(),
+            source: Source::Official,
+        };
+
+        serde_json::to_string_pretty(&value).unwrap()
+    }
+
+    pub fn pinta() -> String {
+        let value = Design {
+            package: "Pinta".to_string(),
+            description: "Drawing/editing program modeled after Paint.NET".to_string(),
+            command: "pinta".to_string(),
+            source: Source::Official,
+        };
+
+        serde_json::to_string_pretty(&value).unwrap()
+    }
+
+    pub fn inkscape() -> String {
+        let value = Design {
+            package: "Inkscape".to_string(),
+            description: "Professional vector graphics editor".to_string(),
+            command: "inkscape".to_string(),
+            source: Source::Official,
+        };
+
+        serde_json::to_string_pretty(&value).unwrap()
+    }
+
+    pub fn kdenlive() -> String {
+        let value = Design {
+            package: "Kdenlive".to_string(),
+            description: "A non-linear video editor for Linux using the MLT video framework".to_string(),
+            command: "kdenlive".to_string(),
+            source: Source::Official,
+        };
+
+        serde_json::to_string_pretty(&value).unwrap()
+    }
+
     pub fn list() -> Vec<String> {
         let lists: Vec<String> = vec![Design::blender(), Design::gimp(), Design::openshot()];
 
