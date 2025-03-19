@@ -72,7 +72,12 @@ impl Program {
     }
 
     pub fn list() -> Vec<String> {
-        let lists: Vec<String> = vec![Program::vsc(), Program::laravel(), Program::nodejs()];
-        lists
+        vec![
+            Program::vsc(),
+            Program::arduino_ide(),
+            Program::netbeans(),
+            Program::codeblock(),
+            Program::obsidian(),
+        ]
     }
 }
