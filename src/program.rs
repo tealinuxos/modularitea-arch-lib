@@ -13,36 +13,62 @@ pub struct Program {
 impl Program {
     pub fn vsc() -> String {
         let vsc = Program {
-            package: "Codium IDE".to_string(),
-            description: "Text Editor / IDE with Open Source License without proprietary tracking"
+            package: "Visual Studio Code".to_string(),
+            description: "Editor for building and debugging modern web and cloud applications"
                 .to_string(),
-            command: "code".to_string(),
-            source: Source::Official,
+            command: "visual-studio-code-bin".to_string(),
+            source: Source::AUR,
         };
 
         serde_json::to_string_pretty(&vsc).unwrap()
     }
 
-    pub fn laravel() -> String {
-        let lambo = Program {
-            package: "Laravel".to_string(),
-            description: "Fullstack framework with powered by PHP programming language".to_string(),
-            command: "/bin/bash -c '$(curl -fsSL https://php.new/install/linux/8.4)'".to_string(),
-            source: Source::URL,
-        };
-
-        serde_json::to_string_pretty(&lambo).unwrap()
-    }
-
-    pub fn nodejs() -> String {
-        let node = Program {
-            package: "Node.js".to_string(),
-            description: "JavaScript runtime built on Chrome's V8 engine".to_string(),
-            command: "nodejs npm".to_string(),
+    pub fn arduino_ide() -> String {
+        let value = Program {
+            package: "Arduino IDE".to_string(),
+            description: "Open-source electronics prototyping platform"
+                .to_string(),
+            command: "arduino-ide".to_string(),
             source: Source::Official,
         };
 
-        serde_json::to_string_pretty(&node).unwrap()
+        serde_json::to_string_pretty(&value).unwrap()
+    }
+
+    pub fn netbeans() -> String {
+        let value = Program {
+            package: "Apache NetBeans".to_string(),
+            description: "IDE for Java, HTML5, PHP, Groovy, C and C++"
+                .to_string(),
+            command: "netbeans".to_string(),
+            source: Source::Official,
+        };
+
+        serde_json::to_string_pretty(&value).unwrap()
+    }
+
+    pub fn codeblock() -> String {
+        let value = Program {
+            package: "Code::Blocks".to_string(),
+            description: "Cross-platform C/C++ IDE"
+                .to_string(),
+            command: "codeblocks".to_string(),
+            source: Source::Official,
+        };
+
+        serde_json::to_string_pretty(&value).unwrap()
+    }
+
+    pub fn obsidian() -> String {
+        let value = Program {
+            package: "Obsidian".to_string(),
+            description: "A powerful knowledge base that works on top of a local folder of plain text Markdown files"
+                .to_string(),
+            command: "obsidian".to_string(),
+            source: Source::Official,
+        };
+
+        serde_json::to_string_pretty(&value).unwrap()
     }
 
     pub fn list() -> Vec<String> {
