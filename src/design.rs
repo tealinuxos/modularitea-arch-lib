@@ -111,8 +111,16 @@ impl Design {
     }
 
     pub fn list() -> Vec<String> {
-        let lists: Vec<String> = vec![Design::blender(), Design::gimp(), Design::openshot()];
-
-        lists
+        vec![
+            Design::blender(),
+            Design::gimp(),
+            Design::openshot(),
+            Design::krita(),
+            Design::figma(),
+            Design::freecad(),
+            Design::pinta(),
+            Design::inkscape(),
+            Design::kdenlive(),
+        ]
     }
 }
