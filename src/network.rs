@@ -44,9 +44,83 @@ impl Network {
         serde_json::to_string_pretty(&post).unwrap()
     }
 
-    pub fn list() -> Vec<String> {
-        let lists: Vec<String> = vec![Network::docker(), Network::burpsuite(), Network::postman()];
+    pub fn jd() -> String {
+        let value = Network {
+            package: "Java Decompiler".to_string(),
+            description: "A standalone graphical utility that displays Java source codes of .class files".to_string(),
+            command: "jd-gui".to_string(),
+            source: Source::AUR,
+        };
 
-        lists
+        serde_json::to_string_pretty(&value).unwrap()
+    }
+
+    pub fn wireshark() -> String {
+        let value = Network {
+            package: "Wireshark".to_string(),
+            description: "Network traffic and protocol analyzer/sniffer".to_string(),
+            command: "wireshark-qt".to_string(),
+            source: Source::Official,
+        };
+
+        serde_json::to_string_pretty(&value).unwrap()
+    }
+
+    pub fn jadx() -> String {
+        let value = Network {
+            package: "Dex to Java decompiler ".to_string(),
+            description: "Command line and GUI tools to produce Java source code from Android Dex and APK files".to_string(),
+            command: "jadx".to_string(),
+            source: Source::Official,
+        };
+
+        serde_json::to_string_pretty(&value).unwrap()
+    }
+
+    pub fn metasploit() -> String {
+        let value = Network {
+            package: "Metasploit ".to_string(),
+            description: "Advanced open-source platform for developing, testing, and using exploit code".to_string(),
+            command: "metasploit".to_string(),
+            source: Source::Official,
+        };
+
+        serde_json::to_string_pretty(&value).unwrap()
+    }
+
+    pub fn ghidra() -> String {
+        let value = Network {
+            package: "Ghidra ".to_string(),
+            description: "Software reverse engineering framework".to_string(),
+            command: "ghidra".to_string(),
+            source: Source::Official,
+        };
+
+        serde_json::to_string_pretty(&value).unwrap()
+    }
+
+    pub fn havoc() -> String {
+        let value = Network {
+            package: "Havoc ".to_string(),
+            description: "Modern and malleable post-exploitation command and control framework".to_string(),
+            command: "havoc-c2-git".to_string(),
+            source: Source::AUR,
+        };
+
+        serde_json::to_string_pretty(&value).unwrap()
+    }
+
+    pub fn list() -> Vec<String> {
+        vec![
+            Network::docker(),
+            Network::burpsuite(),
+            Network::postman(),
+            Network::jd(),
+            Network::wireshark(),
+            Network::jadx(),
+            Network::metasploit(),
+            Network::ghidra(),
+            Network::havoc(),
+        ]
     }
 }
